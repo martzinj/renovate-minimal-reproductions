@@ -10,7 +10,7 @@
       "fileMatch": ["(^|/)requirements\\.ya?ml$"],
       "matchStrings": ["name: (?<depName>.*?)\\s+version: (?<currentValue>.*?)\\s"],
       "depNameTemplate": "correct-aws-account-id.dkr.ecr.eu-central-1.amazonaws.com/charts/{{{depName}}}",
-      "registryUrls": ["https://correct-aws-account-id.dkr.ecr.eu-central-1.amazonaws.com/charts"]
+      "registryUrlTemplate": ["https://correct-aws-account-id.dkr.ecr.eu-central-1.amazonaws.com"]
     }
   ]
 }
