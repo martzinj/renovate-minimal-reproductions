@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "prConcurrentLimit": 100,
+  "rebaseStalePrs": true,
+  "customManagers": [
+    {
+      "description": "helm matcher to handle registryUrl from helm Charts",
+      "customType": "regex",
+      "fileMatch": ["(^|/)requirements\\.ya?ml$"],
+      "matchStrings": ["name: (?<depName>.*?)\\s+version: (?<currentValue>.*?)\\s"],
+      "depNameTemplate": "correct-aws-account-id.dkr.ecr.eu-central-1.amazonaws.com/charts/{{{depName}}}",
+      "registryUrls": ["https://correct-aws-account-id.dkr.ecr.eu-central-1.amazonaws.com/charts"]
+    }
+  ]
+}
+
